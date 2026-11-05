@@ -1,22 +1,29 @@
+# Licensed under the Apache License, Version 2.0: https://www.apache.org/licenses/LICENSE-2.0
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 3.4.11.1-osera-00002
+release: 3.4.11.1-osera-00003
 baseline: v3.4.11+patch.baseline
 fixes:
   - cve: CVE-2025-22227
-    upstream: https://nvd.nist.gov/vuln/detail/CVE-2025-22227
+    upstream_fix_url: https://github.com/reactor/reactor-netty/commit/8d882ffab7c4fa73dd03d3a3e35d2336dc865e52
+    advisory_url: https://nvd.nist.gov/vuln/detail/CVE-2025-22227
+    patch_commit_url: https://github.com/moderne-backpatch-alliance/backpatch-reactor-netty/compare/fa4fd4a~1...e6c0969
+    basis: backport
     artifacts:
       - io.projectreactor.netty:reactor-netty-http
     note: Carried from 2020.0.47.1-backpatch-00001; ported onto 2020.0.47; fixed at 1.0.48.1-backpatch-00001 (backpatch-reactor-netty@fa4fd4a..e6c0969).
   - cve: CVE-2026-41715
-    upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41715
+    upstream_fix_url: https://github.com/reactor/reactor-netty/commit/e7ef551eead84ba465324531683fafa03ab96ee9
+    advisory_url: https://nvd.nist.gov/vuln/detail/CVE-2026-41715
+    patch_commit_url: https://github.com/moderne-backpatch-alliance/backpatch-reactor-netty/compare/82062d9~1...948035b
+    basis: backport
     artifacts:
       - io.projectreactor.netty:reactor-netty-http
-    note: New in this release; ported onto 2020.0.47; fixed at 1.0.48.1-backpatch-00002 (backpatch-reactor-netty@82062d9..948035b).
+    note: Carried from 2020.0.47.1-backpatch-00002; ported onto 2020.0.47; fixed at 1.0.48.1-backpatch-00002 (backpatch-reactor-netty@82062d9..948035b).
 tests:
-  commit: 12e17594e381864af1bfb9e974d0a1d0558ae05a
+  commit: 6c57303df0f42c45e873acd57df9e790cca0dc2e
   command: none in this repository
   runtime: none, no build or test ran for this release
   report: carried, see the evidence of the release named in the note
   result: pass
-  note: this release changes nothing in this repository, nothing ran here; its test provenance is reactor-2020.0 2020.0.47.1-osera-00002 in finos-osera-forks/patch-reactor at v2020.0.47.1-osera-00002, whose .osera/patch-evidence.yaml records the tests that ran
+  note: this release changes nothing in this repository, nothing ran here; its test provenance is reactor-2020.0 2020.0.47.1-osera-00003 in finos-osera-forks/patch-reactor at v2020.0.47.1-osera-00003, whose .osera/patch-evidence.yaml records the tests that ran
